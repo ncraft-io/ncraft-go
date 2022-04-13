@@ -16,11 +16,18 @@ require (
 	github.com/google/uuid v1.3.0
 	github.com/hashicorp/hcl v1.0.0
 	github.com/imdario/mergo v0.3.12
+	github.com/jinzhu/now v1.1.5 // indirect
+	github.com/json-iterator/go v1.1.12
+	github.com/mattn/go-sqlite3 v1.14.12 // indirect
 	github.com/minio/minio-go v6.0.14+incompatible
-	github.com/mojo-lang/core/go v0.0.0-20220329033810-b692d6f297ca
+	github.com/mojo-lang/core/go v0.0.0-20220413061510-ccba5147df3a
+	github.com/nats-io/nats.go v1.13.0
 	github.com/pkg/errors v0.9.1
-	github.com/satori/go.uuid v1.2.0 // indirect
 	go.uber.org/zap v1.21.0
-	golang.org/x/crypto v0.0.0-20220321153916-2c7772ba3064
+	golang.org/x/crypto v0.0.0-20220331220935-ae2d96664a29
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
+	gorm.io/driver/mysql v1.3.3
+	gorm.io/driver/postgres v1.3.3
+	gorm.io/driver/sqlite v1.3.1
+	gorm.io/gorm v1.23.4
 )

@@ -12,9 +12,10 @@ import (
 type initializer func(cfg *Config) Storage
 
 var initializers map[string]initializer
+var initializersOnce sync.Once
 
 func Register(name string, init initializer) {
-    (&sync.Once{}).Do(func() {
+    initializersOnce.Do(func() {
         initializers = make(map[string]initializer)
     })
 

@@ -3,6 +3,7 @@ package messaging
 import (
     "context"
     "errors"
+    "fmt"
     "github.com/ncraft-io/ncraft-go/pkg/config"
 )
 
@@ -21,6 +22,7 @@ func NewClient() (*Client, error) {
 
 func NewClientWith(config *Config) (*Client, error) {
     if config == nil {
+        return nil, errors.New("there is no config for the messaging client")
     }
 
     if queues != nil {
@@ -28,12 +30,12 @@ func NewClientWith(config *Config) (*Client, error) {
             if q, err := c(config); err != nil {
                 return nil, err
             } else {
-                return &Client{Provider: q}, nil
+                return &Client{Provider: q, Config: config}, nil
             }
         }
     }
 
-    return nil, errors.New("")
+    return nil, fmt.Errorf("has no proper queue provider for the %s", config.Provider)
 }
 
 func (c *Client) GetConfig() *Config {
